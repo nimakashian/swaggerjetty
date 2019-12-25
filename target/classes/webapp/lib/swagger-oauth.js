@@ -42,30 +42,30 @@ function handleLogin() {
     appName = window.swaggerUi.api.info.title;
   }
 
-  $('.api-popup-dialog').remove(); 
+  $('.com.api-popup-dialog').remove();
   popupDialog = $(
     [
-      '<div class="api-popup-dialog">',
-      '<div class="api-popup-title">Select OAuth2.0 Scopes</div>',
-      '<div class="api-popup-content">',
+      '<div class="com.api-popup-dialog">',
+      '<div class="com.api-popup-title">Select OAuth2.0 Scopes</div>',
+      '<div class="com.api-popup-content">',
         '<p>Scopes are used to grant an application different levels of access to data on behalf of the end user. Each API may declare one or more scopes.',
           '<a href="#">Learn how to use</a>',
         '</p>',
         '<p><strong>' + appName + '</strong> API requires the following scopes. Select which ones you want to grant to Swagger UI.</p>',
-        '<ul class="api-popup-scopes">',
+        '<ul class="com.api-popup-scopes">',
         '</ul>',
         '<p class="error-msg"></p>',
-        '<div class="api-popup-actions"><button class="api-popup-authbtn api-button green" type="button">Authorize</button><button class="api-popup-cancel api-button gray" type="button">Cancel</button></div>',
+        '<div class="com.api-popup-actions"><button class="com.api-popup-authbtn com.api-button green" type="button">Authorize</button><button class="com.api-popup-cancel com.api-button gray" type="button">Cancel</button></div>',
       '</div>',
       '</div>'].join(''));
   $(document.body).append(popupDialog);
 
-  popup = popupDialog.find('ul.api-popup-scopes').empty();
+  popup = popupDialog.find('ul.com.api-popup-scopes').empty();
   for (i = 0; i < scopes.length; i ++) {
     scope = scopes[i];
     str = '<li><input type="checkbox" id="scope_' + i + '" scope="' + scope.scope + '"/>' + '<label for="scope_' + i + '">' + scope.scope;
     if (scope.description) {
-      str += '<br/><span class="api-scope-desc">' + scope.description + '</span>';
+      str += '<br/><span class="com.api-scope-desc">' + scope.description + '</span>';
     }
     str += '</label></li>';
     popup.append(str);
@@ -85,15 +85,15 @@ function handleLogin() {
     left: (left < 0? 0 : left) + 'px'
   });
 
-  popupDialog.find('button.api-popup-cancel').click(function() {
+  popupDialog.find('button.com.api-popup-cancel').click(function() {
     popupMask.hide();
     popupDialog.hide();
     popupDialog.empty();
     popupDialog = [];
   });
 
-  $('button.api-popup-authbtn').unbind();
-  popupDialog.find('button.api-popup-authbtn').click(function() {
+  $('button.com.api-popup-authbtn').unbind();
+  popupDialog.find('button.com.api-popup-authbtn').click(function() {
     popupMask.hide();
     popupDialog.hide();
 
@@ -135,7 +135,7 @@ function handleLogin() {
       }
     }
     var scopes = []
-    var o = $('.api-popup-scopes').find('input:checked');
+    var o = $('.com.api-popup-scopes').find('input:checked');
 
     for(k =0; k < o.length; k++) {
       var scope = $(o[k]).attr('scope');
@@ -171,12 +171,12 @@ function handleLogout() {
     window.authorizations.remove(key)
   }
   window.enabledScopes = null;
-  $('.api-ic.ic-on').addClass('ic-off');
-  $('.api-ic.ic-on').removeClass('ic-on');
+  $('.com.api-ic.ic-on').addClass('ic-off');
+  $('.com.api-ic.ic-on').removeClass('ic-on');
 
   // set the info box
-  $('.api-ic.ic-warning').addClass('ic-error');
-  $('.api-ic.ic-warning').removeClass('ic-warning');
+  $('.com.api-ic.ic-warning').addClass('ic-error');
+  $('.com.api-ic.ic-warning').removeClass('ic-warning');
 }
 
 function initOAuth(opts) {
@@ -184,8 +184,8 @@ function initOAuth(opts) {
   var errors = [];
 
   appName = (o.appName||errors.push('missing appName'));
-  popupMask = (o.popupMask||$('#api-common-mask'));
-  popupDialog = (o.popupDialog||$('.api-popup-dialog'));
+  popupMask = (o.popupMask||$('#com.api-common-mask'));
+  popupDialog = (o.popupDialog||$('.com.api-popup-dialog'));
   clientId = (o.clientId||errors.push('missing client id'));
   clientSecret = (o.clientSecret||errors.push('missing client secret'));
   realm = (o.realm||errors.push('missing realm'));
@@ -197,8 +197,8 @@ function initOAuth(opts) {
   }
 
   $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
-  $('.api-ic').unbind();
-  $('.api-ic').click(function(s) {
+  $('.com.api-ic').unbind();
+  $('.com.api-ic').click(function(s) {
     if($(s.target).hasClass('ic-off'))
       handleLogin();
     else {
@@ -246,7 +246,7 @@ window.onOAuthComplete = function onOAuthComplete(token) {
       if(b){
         // if all roles are satisfied
         var o = null;
-        $.each($('.auth .api-ic .api_information_panel'), function(k, v) {
+        $.each($('.auth .com.api-ic .api_information_panel'), function(k, v) {
           var children = v;
           if(children && children.childNodes) {
             var requiredScopes = [];
@@ -264,22 +264,22 @@ window.onOAuthComplete = function onOAuthComplete(token) {
             }
             if(diff.length > 0){
               o = v.parentNode.parentNode;
-              $(o.parentNode).find('.api-ic.ic-on').addClass('ic-off');
-              $(o.parentNode).find('.api-ic.ic-on').removeClass('ic-on');
+              $(o.parentNode).find('.com.api-ic.ic-on').addClass('ic-off');
+              $(o.parentNode).find('.com.api-ic.ic-on').removeClass('ic-on');
 
               // sorry, not all scopes are satisfied
-              $(o).find('.api-ic').addClass('ic-warning');
-              $(o).find('.api-ic').removeClass('ic-error');
+              $(o).find('.com.api-ic').addClass('ic-warning');
+              $(o).find('.com.api-ic').removeClass('ic-error');
             }
             else {
               o = v.parentNode.parentNode;
-              $(o.parentNode).find('.api-ic.ic-off').addClass('ic-on');
-              $(o.parentNode).find('.api-ic.ic-off').removeClass('ic-off');
+              $(o.parentNode).find('.com.api-ic.ic-off').addClass('ic-on');
+              $(o.parentNode).find('.com.api-ic.ic-off').removeClass('ic-off');
 
               // all scopes are satisfied
-              $(o).find('.api-ic').addClass('ic-info');
-              $(o).find('.api-ic').removeClass('ic-warning');
-              $(o).find('.api-ic').removeClass('ic-error');
+              $(o).find('.com.api-ic').addClass('ic-info');
+              $(o).find('.com.api-ic').removeClass('ic-warning');
+              $(o).find('.com.api-ic').removeClass('ic-error');
             }
           }
         });

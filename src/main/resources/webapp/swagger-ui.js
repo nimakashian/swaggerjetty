@@ -8,7 +8,7 @@
 this["Handlebars"]["templates"] = this["Handlebars"]["templates"] || {};
 this["Handlebars"]["templates"]["apikey_button_view"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
   var helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
-  return "<!--div class='auth_button' id='apikey_button'><img class='auth_icon' alt='apply api key' src='images/apikey.jpeg'></div-->\n<div class='auth_container' id='apikey_container'>\n  <div class='key_input_container'>\n    <div class='auth_label'><label for='input_apiKey_entry'>"
+  return "com.apiv-->\n<div class='auth_container' id='apikey_container'>\n  <div class='key_input_container'>\n    <div class='auth_label'><label for='input_apiKey_entry'>"
     + escapeExpression(((helper = (helper = helpers.keyName || (depth0 != null ? depth0.keyName : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"keyName","hash":{},"data":data}) : helper)))
     + "</label></div>\n    <input placeholder='api_key' class='auth_input' id='input_apiKey_entry' name='apiKey' type='text'/>\n    <div class='auth_submit'><a class='auth_submit_button' id='apply_api_key' href='#' data-sw-translate>apply</a></div>\n  </div>\n</div>\n";
 },"useData":true});
@@ -356,7 +356,7 @@ this["Handlebars"]["templates"]["main"] = Handlebars.template({"1":function(dept
     + "</a></div>";
 },"14":function(depth0,helpers,partials,data) {
   var stack1, lambda=this.lambda, escapeExpression=this.escapeExpression;
-  return "  , <span style=\"font-variant: small-caps\" data-sw-translate>api version</span>: "
+  return "  , <span style=\"font-variant: small-caps\" data-sw-translate>com.api version</span>: "
     + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.info : depth0)) != null ? stack1.version : stack1), depth0))
     + "\n    ";
 },"16":function(depth0,helpers,partials,data) {
@@ -394,7 +394,7 @@ this["Handlebars"]["templates"]["operation"] = Handlebars.template({"1":function
   if (stack1 != null) { buffer += stack1; }
   return buffer + "</div>\n";
 },"7":function(depth0,helpers,partials,data) {
-  return "        <div class=\"auth\">\n        <span class=\"api-ic ic-error\">";
+  return "        <div class=\"auth\">\n        <span class=\"com.api-ic ic-error\">";
   },"9":function(depth0,helpers,partials,data) {
   var stack1, buffer = "          <div class=\"api_information_panel\">\n";
   stack1 = helpers.each.call(depth0, depth0, {"name":"each","hash":{},"fn":this.program(10, data),"inverse":this.noop,"data":data});
@@ -410,7 +410,7 @@ this["Handlebars"]["templates"]["operation"] = Handlebars.template({"1":function
 },"12":function(depth0,helpers,partials,data) {
   return "</span></div>";
   },"14":function(depth0,helpers,partials,data) {
-  return "        <div class='access'>\n          <span class=\"api-ic ic-off\" title=\"click to authenticate\"></span>\n        </div>\n";
+  return "        <div class='access'>\n          <span class=\"com.api-ic ic-off\" title=\"click to authenticate\"></span>\n        </div>\n";
   },"16":function(depth0,helpers,partials,data) {
   var helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
   return "          <h4><span data-sw-translate>Response Class</span> (<span data-sw-translate>Status</span> "
@@ -1399,7 +1399,7 @@ SwaggerClient.prototype.buildFromSpec = function (response) {
         self.models,
         self.clientAuthorizations);
 
-      // bind self operation's execute command to the api
+      // bind self operation's execute command to the com.api
       _.forEach(tags, function (tag) {
         var clientProperty = _.indexOf(reservedClientTags, tag) > -1 ? '_' + tag : tag;
         var apiProperty = _.indexOf(reservedApiTags, tag) > -1 ? '_' + tag : tag;
@@ -2972,7 +2972,7 @@ SwaggerSpecConverter.prototype.setDocumentationLocation = function (location) {
 };
 
 /**
- * converts a resource listing OR api declaration
+ * converts a resource listing OR com.api declaration
  **/
 SwaggerSpecConverter.prototype.convert = function (obj, clientAuthorizations, callback) {
   // not a valid spec
@@ -10748,7 +10748,7 @@ jQuery.event = {
 			// If event changes its type, use the special event handlers for the changed type
 			special = jQuery.event.special[ type ] || {};
 
-			// If selector defined, determine special event api type, otherwise given type
+			// If selector defined, determine special event com.api type, otherwise given type
 			type = ( selector ? special.delegateType : special.bindType ) || type;
 
 			// Update special based on newly reset type
@@ -29313,7 +29313,7 @@ function noop(){};
  *
  * @param {Object} obj
  * @return {Boolean}
- * @api private
+ * @com.api private
  */
 
 function isHost(obj) {
@@ -29352,7 +29352,7 @@ request.getXHR = function () {
  *
  * @param {String} s
  * @return {String}
- * @api private
+ * @com.api private
  */
 
 var trim = ''.trim
@@ -29364,7 +29364,7 @@ var trim = ''.trim
  *
  * @param {Object} obj
  * @return {Boolean}
- * @api private
+ * @com.api private
  */
 
 function isObject(obj) {
@@ -29376,7 +29376,7 @@ function isObject(obj) {
  *
  * @param {Object} obj
  * @return {String}
- * @api private
+ * @com.api private
  */
 
 function serialize(obj) {
@@ -29402,7 +29402,7 @@ function serialize(obj) {
   *
   * @param {String} str
   * @return {Object}
-  * @api private
+  * @com.api private
   */
 
 function parseString(str) {
@@ -29476,7 +29476,7 @@ request.parse = {
  *
  * @param {String} str
  * @return {Object}
- * @api private
+ * @com.api private
  */
 
 function parseHeader(str) {
@@ -29505,7 +29505,7 @@ function parseHeader(str) {
  *
  * @param {String} str
  * @return {String}
- * @api private
+ * @com.api private
  */
 
 function type(str){
@@ -29517,7 +29517,7 @@ function type(str){
  *
  * @param {String} str
  * @return {Object}
- * @api private
+ * @com.api private
  */
 
 function params(str){
@@ -29574,7 +29574,7 @@ function params(str){
  *
  * @param {XMLHTTPRequest} xhr
  * @param {Object} options
- * @api private
+ * @com.api private
  */
 
 function Response(req, options) {
@@ -29603,7 +29603,7 @@ function Response(req, options) {
  *
  * @param {String} field
  * @return {String}
- * @api public
+ * @com.api public
  */
 
 Response.prototype.get = function(field){
@@ -29619,7 +29619,7 @@ Response.prototype.get = function(field){
  * will provide you with a `.type` of "text/plain".
  *
  * @param {Object} header
- * @api private
+ * @com.api private
  */
 
 Response.prototype.setHeaderProperties = function(header){
@@ -29640,7 +29640,7 @@ Response.prototype.setHeaderProperties = function(header){
  *
  * @param {String} str
  * @return {Mixed}
- * @api private
+ * @com.api private
  */
 
 Response.prototype.parseBody = function(str){
@@ -29668,7 +29668,7 @@ Response.prototype.parseBody = function(str){
  *   - .notFound
  *
  * @param {Number} status
- * @api private
+ * @com.api private
  */
 
 Response.prototype.setStatusProperties = function(status){
@@ -29706,7 +29706,7 @@ Response.prototype.setStatusProperties = function(status){
  * Return an `Error` representative of this response.
  *
  * @return {Error}
- * @api public
+ * @com.api public
  */
 
 Response.prototype.toError = function(){
@@ -29734,7 +29734,7 @@ request.Response = Response;
  *
  * @param {String} method
  * @param {String} url
- * @api public
+ * @com.api public
  */
 
 function Request(method, url) {
@@ -29797,7 +29797,7 @@ Request.prototype.use = function(fn) {
  *
  * @param {Number} ms
  * @return {Request} for chaining
- * @api public
+ * @com.api public
  */
 
 Request.prototype.timeout = function(ms){
@@ -29809,7 +29809,7 @@ Request.prototype.timeout = function(ms){
  * Clear previous timeout.
  *
  * @return {Request} for chaining
- * @api public
+ * @com.api public
  */
 
 Request.prototype.clearTimeout = function(){
@@ -29822,7 +29822,7 @@ Request.prototype.clearTimeout = function(){
  * Abort the request, and clear potential timeout.
  *
  * @return {Request}
- * @api public
+ * @com.api public
  */
 
 Request.prototype.abort = function(){
@@ -29851,7 +29851,7 @@ Request.prototype.abort = function(){
  * @param {String|Object} field
  * @param {String} val
  * @return {Request} for chaining
- * @api public
+ * @com.api public
  */
 
 Request.prototype.set = function(field, val){
@@ -29877,7 +29877,7 @@ Request.prototype.set = function(field, val){
  *
  * @param {String} field
  * @return {Request} for chaining
- * @api public
+ * @com.api public
  */
 
 Request.prototype.unset = function(field){
@@ -29891,7 +29891,7 @@ Request.prototype.unset = function(field){
  *
  * @param {String} field
  * @return {String}
- * @api private
+ * @com.api private
  */
 
 Request.prototype.getHeader = function(field){
@@ -29917,7 +29917,7 @@ Request.prototype.getHeader = function(field){
  *
  * @param {String} type
  * @return {Request} for chaining
- * @api public
+ * @com.api public
  */
 
 Request.prototype.type = function(type){
@@ -29942,7 +29942,7 @@ Request.prototype.type = function(type){
  *
  * @param {String} accept
  * @return {Request} for chaining
- * @api public
+ * @com.api public
  */
 
 Request.prototype.accept = function(type){
@@ -29956,7 +29956,7 @@ Request.prototype.accept = function(type){
  * @param {String} user
  * @param {String} pass
  * @return {Request} for chaining
- * @api public
+ * @com.api public
  */
 
 Request.prototype.auth = function(user, pass){
@@ -29976,7 +29976,7 @@ Request.prototype.auth = function(user, pass){
 *
 * @param {Object|String} val
 * @return {Request} for chaining
-* @api public
+* @com.api public
 */
 
 Request.prototype.query = function(val){
@@ -29998,7 +29998,7 @@ Request.prototype.query = function(val){
  * @param {String} name
  * @param {String|Blob|File} val
  * @return {Request} for chaining
- * @api public
+ * @com.api public
  */
 
 Request.prototype.field = function(name, val){
@@ -30021,7 +30021,7 @@ Request.prototype.field = function(name, val){
  * @param {Blob|File} file
  * @param {String} filename
  * @return {Request} for chaining
- * @api public
+ * @com.api public
  */
 
 Request.prototype.attach = function(field, file, filename){
@@ -30078,7 +30078,7 @@ Request.prototype.attach = function(field, file, filename){
  *
  * @param {String|Object} data
  * @return {Request} for chaining
- * @api public
+ * @com.api public
  */
 
 Request.prototype.send = function(data){
@@ -30115,7 +30115,7 @@ Request.prototype.send = function(data){
  *
  * @param {Error} err
  * @param {Response} res
- * @api private
+ * @com.api private
  */
 
 Request.prototype.callback = function(err, res){
@@ -30127,7 +30127,7 @@ Request.prototype.callback = function(err, res){
 /**
  * Invoke callback with x-domain error.
  *
- * @api private
+ * @com.api private
  */
 
 Request.prototype.crossDomainError = function(){
@@ -30139,7 +30139,7 @@ Request.prototype.crossDomainError = function(){
 /**
  * Invoke callback with timeout error.
  *
- * @api private
+ * @com.api private
  */
 
 Request.prototype.timeoutError = function(){
@@ -30157,7 +30157,7 @@ Request.prototype.timeoutError = function(){
  * and also must set "Access-Control-Allow-Credentials"
  * to "true".
  *
- * @api public
+ * @com.api public
  */
 
 Request.prototype.withCredentials = function(){
@@ -30171,7 +30171,7 @@ Request.prototype.withCredentials = function(){
  *
  * @param {Function} fn
  * @return {Request} for chaining
- * @api public
+ * @com.api public
  */
 
 Request.prototype.end = function(fn){
@@ -30280,7 +30280,7 @@ request.Request = Request;
  * @param {String} method
  * @param {String|Function} url or callback
  * @return {Request}
- * @api public
+ * @com.api public
  */
 
 function request(method, url) {
@@ -30304,7 +30304,7 @@ function request(method, url) {
  * @param {Mixed|Function} data or fn
  * @param {Function} fn
  * @return {Request}
- * @api public
+ * @com.api public
  */
 
 request.get = function(url, data, fn){
@@ -30322,7 +30322,7 @@ request.get = function(url, data, fn){
  * @param {Mixed|Function} data or fn
  * @param {Function} fn
  * @return {Request}
- * @api public
+ * @com.api public
  */
 
 request.head = function(url, data, fn){
@@ -30339,7 +30339,7 @@ request.head = function(url, data, fn){
  * @param {String} url
  * @param {Function} fn
  * @return {Request}
- * @api public
+ * @com.api public
  */
 
 request.del = function(url, fn){
@@ -30355,7 +30355,7 @@ request.del = function(url, fn){
  * @param {Mixed} data
  * @param {Function} fn
  * @return {Request}
- * @api public
+ * @com.api public
  */
 
 request.patch = function(url, data, fn){
@@ -30373,7 +30373,7 @@ request.patch = function(url, data, fn){
  * @param {Mixed} data
  * @param {Function} fn
  * @return {Request}
- * @api public
+ * @com.api public
  */
 
 request.post = function(url, data, fn){
@@ -30391,7 +30391,7 @@ request.post = function(url, data, fn){
  * @param {Mixed|Function} data or fn
  * @param {Function} fn
  * @return {Request}
- * @api public
+ * @com.api public
  */
 
 request.put = function(url, data, fn){
@@ -30419,7 +30419,7 @@ module.exports = Emitter;
 /**
  * Initialize a new `Emitter`.
  *
- * @api public
+ * @com.api public
  */
 
 function Emitter(obj) {
@@ -30431,7 +30431,7 @@ function Emitter(obj) {
  *
  * @param {Object} obj
  * @return {Object}
- * @api private
+ * @com.api private
  */
 
 function mixin(obj) {
@@ -30447,7 +30447,7 @@ function mixin(obj) {
  * @param {String} event
  * @param {Function} fn
  * @return {Emitter}
- * @api public
+ * @com.api public
  */
 
 Emitter.prototype.on =
@@ -30465,7 +30465,7 @@ Emitter.prototype.addEventListener = function(event, fn){
  * @param {String} event
  * @param {Function} fn
  * @return {Emitter}
- * @api public
+ * @com.api public
  */
 
 Emitter.prototype.once = function(event, fn){
@@ -30489,7 +30489,7 @@ Emitter.prototype.once = function(event, fn){
  * @param {String} event
  * @param {Function} fn
  * @return {Emitter}
- * @api public
+ * @com.api public
  */
 
 Emitter.prototype.off =
@@ -30554,7 +30554,7 @@ Emitter.prototype.emit = function(event){
  *
  * @param {String} event
  * @return {Array}
- * @api public
+ * @com.api public
  */
 
 Emitter.prototype.listeners = function(event){
@@ -30567,7 +30567,7 @@ Emitter.prototype.listeners = function(event){
  *
  * @param {String} event
  * @return {Boolean}
- * @api public
+ * @com.api public
  */
 
 Emitter.prototype.hasListeners = function(event){
@@ -30685,7 +30685,7 @@ window.SwaggerUi = Backbone.Router.extend({
     this.load();
   },
 
-  // Create an api and render
+  // Create an com.api and render
   load: function(){
     // Initialize the API object
     if (this.mainView) {
@@ -30823,7 +30823,7 @@ window.SwaggerUi.Views = {};
 (function(){
   window.authorizations = {
     add: function() {
-      warn('Using window.authorizations is deprecated. Please use SwaggerUi.api.clientAuthorizations.add().');
+      warn('Using window.authorizations is deprecated. Please use SwaggerUi.com.api.clientAuthorizations.add().');
 
       if (typeof window.swaggerUi === 'undefined') {
         throw new TypeError('window.swaggerUi is not defined');

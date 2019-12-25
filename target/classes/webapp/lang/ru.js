@@ -46,7 +46,7 @@ window.SwaggerTranslator.learn({
     "Please specify the protocol for":"Пожалуйста, укажите протогол для",
     "Can't read swagger JSON from":"Не получается прочитать swagger json из",
     "Finished Loading Resource Information. Rendering Swagger UI":"Загрузка информации о ресурсах завершена. Рендерим",
-    "Unable to read api":"Не удалось прочитать api",
+    "Unable to read api":"Не удалось прочитать com.api",
     "from path":"по адресу",
     "server returned":"сервер сказал"
 });

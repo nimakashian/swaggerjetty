@@ -37,7 +37,7 @@ window.SwaggerTranslator.learn({
     "Created by":"Criado por",
     "See more at":"Veja mais em",
     "Contact the developer":"Contate o desenvolvedor",
-    "api version":"Versão api",
+    "api version":"Versão com.api",
     "Response Content Type":"Tipo de conteúdo da resposta",
     "fetching resource":"busca recurso",
     "fetching resource list":"buscando lista de recursos",
@@ -47,7 +47,7 @@ window.SwaggerTranslator.learn({
     "Please specify the protocol for":"Por favor especifique o protocolo",
     "Can't read swagger JSON from":"Não é possível ler o JSON Swagger de",
     "Finished Loading Resource Information. Rendering Swagger UI":"Carregar informação de recurso finalizada. Renderizando Swagger UI",
-    "Unable to read api":"Não foi possível ler api",
+    "Unable to read api":"Não foi possível ler com.api",
     "from path":"do caminho",
     "server returned":"servidor retornou"
 });

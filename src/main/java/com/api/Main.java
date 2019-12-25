@@ -1,4 +1,4 @@
-package api;
+package com.api;
 
 import com.sun.jersey.spi.container.servlet.ServletContainer;
 import io.swagger.jaxrs.config.DefaultJaxrsConfig;
@@ -27,14 +27,14 @@ public class Main {
         apiServlet.setInitOrder(1);
 
         // Setup API resources
-        apiServlet = context.addServlet(ServletContainer.class, "/api/*");
+        apiServlet = context.addServlet(SwaggerServlet.class, "/apii/*");
         apiServlet.setInitOrder(1);
-        apiServlet.setInitParameter("com.sun.jersey.config.property.packages", "com.api.resources;io.swagger.jaxrs.json;io.swagger.jaxrs.listing");
+        apiServlet.setInitParameter("com.sun.jersey.config.property.packages", "com.api;io.swagger.jaxrs.json;io.swagger.jaxrs.listing");
 
         // Setup Swagger servlet
         ServletHolder swaggerServlet = context.addServlet(DefaultJaxrsConfig.class, "/swagger-core");
         swaggerServlet.setInitOrder(2);
-        swaggerServlet.setInitParameter("api.version", "1.0.0");
+        swaggerServlet.setInitParameter("com.api.version", "4.0.0");
 
         // Setup Swagger-UI static resources
         String resourceBasePath = Main.class.getResource("/webapp").toExternalForm();
