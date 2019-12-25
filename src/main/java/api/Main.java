@@ -2,6 +2,8 @@ package api;
 
 import com.sun.jersey.spi.container.servlet.ServletContainer;
 import io.swagger.jaxrs.config.DefaultJaxrsConfig;
+import io.swagger.servlet.config.DefaultServletConfig;
+import io.swagger.servlet.listing.ApiDeclarationServlet;
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.AbstractHandler;
@@ -27,14 +29,19 @@ public class Main {
         apiServlet.setInitOrder(1);
 
         // Setup API resources
-        apiServlet = context.addServlet(ServletContainer.class, "/api/*");
+        apiServlet = context.addServlet(ApiDeclarationServlet.class, "/api/*");
         apiServlet.setInitOrder(1);
-        apiServlet.setInitParameter("com.sun.jersey.config.property.packages", "com.api.resources;io.swagger.jaxrs.json;io.swagger.jaxrs.listing");
+
+
+
+
 
         // Setup Swagger servlet
-        ServletHolder swaggerServlet = context.addServlet(DefaultJaxrsConfig.class, "/swagger-core");
+        ServletHolder swaggerServlet = context.addServlet(DefaultServletConfig.class, "/swagger-core");
         swaggerServlet.setInitOrder(2);
         swaggerServlet.setInitParameter("api.version", "1.0.0");
+        swaggerServlet.setInitParameter("swagger.resource.package", "api");
+
 
         // Setup Swagger-UI static resources
         String resourceBasePath = Main.class.getResource("/webapp").toExternalForm();
